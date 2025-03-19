@@ -1,6 +1,8 @@
 class HomePageComponent {
-    constructor(Magic) {
+    constructor(Magic, storageService) {
         this.Magic = Magic 
+        
+        this.storageService = storageService;
     }
 
     async start(){
@@ -13,14 +15,14 @@ class HomePageComponent {
         this.data = await this.Magic.getMagicData();
         this.render(this.data)
     }
-
-
+   
     render(data) {
         
         
         const cardContainer = document.getElementById("main-container");
         cardContainer.innerText = ''
-        for (const magic of data) {
+        for   (let i = 0; i < data.length; i++) {
+            const magic =  data [i];
             const imgContainer = document.createElement("div");
             imgContainer.className = "img-container"; 
     
@@ -59,7 +61,7 @@ class HomePageComponent {
 
             const node1 = document.createTextNode('salva');
 
-            saveBtn.appendChild(node);
+            saveBtn.appendChild(node1);
 
             magicLink.appendChild(saveBtn);
         }
@@ -78,12 +80,13 @@ class HomePageComponent {
         this.render(this.data)
     }
 
+    saveMagic(event, index){
+        event.preventDefault();
+        const selectedMagic = this.data[index]
+        this.storageService.save(selectedMagic);
+    }
 
-saveMagic(event, index){
-    event.preventDefault();
-    const se = this.data[index]
-    this.storageService.save(selectedMagic);
-}
+
 
 }
 
