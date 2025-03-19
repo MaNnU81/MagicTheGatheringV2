@@ -1,0 +1,79 @@
+
+
+
+/* Contenitore principale per le card */
+#main-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonne */
+  gap: 20px; /* Distanza tra le card */
+  padding: 10px;
+  justify-content: center;
+}
+
+/* Singola card */
+.card {
+  position: relative; /* Permette all'overlay di posizionarsi sopra */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Immagini */
+.img-container {
+  height: 250px;
+  width: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin-bottom: 10px;
+}
+
+.img-container img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Testo sovrapposto all'immagine (inizialmente nascosto) */
+.txt-container {
+  position: absolute; 
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 70px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  text-align: start;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  
+  opacity: 0; /* Il testo è nascosto di default */
+  transition: opacity 0.3s ease-in-out; /* Effetto di transizione fluido */
+  z-index: 10;
+}
+.txt-container:hover  {
+  opacity: 1; /* Il testo diventa visibile */
+  
+}
+
+
+
+
+.img-container {
+  position: relative; /* Rende possibile posizionare l'overlay sopra */
+  height: 250px;
+  width: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+}
