@@ -28,6 +28,7 @@ class storageService {
             localStorage.setItem('starred', JSON.stringify(starredMagics));
         }
     }
+    
     getStarredMagic() {
         const starredMagicString = localStorage.getItem('starred')
 

@@ -1,5 +1,6 @@
-import StarredPageComponent from "./components/starred-page-component";
-import StorageService from "./services/storage-service";
+
+import StarredPageComponent from "../components/starred-page-component.js";
+import StorageService from "./services/storageService.js";
 
 const storageS = new StorageService()
 

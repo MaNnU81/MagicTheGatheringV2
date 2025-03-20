@@ -1,14 +1,14 @@
 class StarredPageComponent {
 
 
-    constructor( storageService) {
+    constructor(storageService) {
 
         this.storageService = storageService;
     }
 
-    async start(){
+    start(){
 
-        this.data = await this.storageService.getStarredMagicData();
+        this.data = this.storageService.getStarredMagic();
         this.render(this.data)
     }
 
